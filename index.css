@@ -1,0 +1,372 @@
+html {
+    overflow-y: scroll;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+.loading {
+    overflow: hidden;
+    height: 100%;
+}
+
+#main-panel {
+    background-image: url("./images/back2.jpeg");
+    padding: 20px;
+    position: relative;
+}
+
+#logo {
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    white-space: nowrap;
+}
+
+#arrow {
+    position: absolute;
+    bottom: 0px;
+    width: 40px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: none;
+}
+
+#arrow.bobbing {
+    animation-name: bobbing;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    display: unset;
+}
+
+@keyframes bobbing {
+    0% {
+        transform: translate(-50%, 0%);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, 0%);
+    }
+}
+
+.loading {
+    position: fixed;
+}
+
+#logoimage {
+    height: 135%;
+}
+
+#logotext {
+    height: 100%;
+    max-width: 0px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#logotext img {
+    height: 100%;
+    float: right;
+}
+
+.shown {
+    animation: showtext 1s 1 forwards ease;
+}
+
+@keyframes showtext {
+    from {
+        max-width: 0px;
+        margin-left: 0px;
+    }
+    to {
+        max-width: 708px;
+        margin-left: 20px;
+    }
+}
+
+.loadanimation {
+    animation: rotation 2s infinite;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+#navbar {
+    padding: 15px;
+    font-weight: bold;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+    padding-left: 40px;
+    text-shadow: 1px 1px 2px black;
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+}
+
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    transform: translateX(0);
+    transition: transform 0.25s linear, height 0.25s step-start;
+    z-index: 1000;
+    background-color: white;
+}
+
+.hidden {
+    transform: translateX(-100%);
+    height: 0;
+    transition-timing-function: linear, step-end;
+}
+
+.contactbutton {
+    margin-top: 15px;
+    padding: 20px;
+    color: white;
+    background-color: steelblue;
+    border-radius: 3px;
+}
+
+#panel2 {
+    background-image: url("./images/back3.jpg");
+}
+
+.textdiv {
+    max-width: 50%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#panel1 {
+    text-align: center;
+    background: linear-gradient(to bottom right, #12191b, white);
+    padding: 0px;
+    position: relative;
+}
+
+#panel1 > div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#panel3 {
+    text-align: right;
+    background: linear-gradient(#12191b, white);
+}
+
+#panel3 a {
+    color: blue;
+}
+
+#panel3 a:hover {
+    text-decoration: underline;
+}
+
+#portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: space-around;
+    width: 100%;
+    padding: 10px;
+}
+
+#portfolio-grid .item {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14pt;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    max-width: 300px;
+    margin: 10px;
+    background-color: white;
+}
+
+#portfolio-grid .item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#portfolio-grid .item img {
+    width: 100%;
+}
+
+#portfolio-grid .item p {
+    font-size: 12pt;
+}
+
+.cardcontainer {
+    padding: 15px;
+}
+
+#panel4 {
+    background-image: url("./images/background3-2.png");
+    height: unset;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#panel4 > div {
+    flex: 1;
+    max-height: 100%;
+}
+
+#member-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    max-width: 1050px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+#member-grid .item {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+#member-grid .cardoverlay {
+    position: relative;
+    top: 70%;
+    transform: translateY(100%);
+    opacity: 0.0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    height: 30%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 15px;
+}
+
+#member-grid .item:hover .cardoverlay {
+    transform: translateY(0px);
+    opacity: 1.0;
+}
+
+#member-grid .cardoverlay p {
+    font-size: 12pt;
+}
+
+#member-grid .cardoverlay b {
+    font-size: 12pt;
+}
+
+#member-grid .item img {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#panel5 {
+    background: linear-gradient(to bottom left, black, #0f0f0f);
+    color: white;
+    position: relative;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#panel5 > div:first-of-type {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    min-height: unset;
+    background-color: #3c4b63;
+    color: white;
+    overflow: auto;
+    padding: 10px;
+}
+
+#footer .left {
+    float: left;
+}
+
+#footer .right {
+    float: right;
+}
+
+#footer a {
+    margin-right: 20px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#text{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    max-width: 1050px;
+    margin: auto;
+    margin-top: 40px;
+    font-size: 200%;
+    color: whitesmoke;
+}
+#text1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    max-width: 1050px;
+    margin: auto;
+    margin-top: 40px;
+    
+   
+}
+
+#review{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    max-width: 1050px;
+    margin: auto;
+    margin-top: 40px;
+    color: aliceblue;
+   
+}
